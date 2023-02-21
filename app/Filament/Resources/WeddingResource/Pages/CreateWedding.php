@@ -10,8 +10,8 @@ class CreateWedding extends CreateRecord
 {
     protected static string $resource = WeddingResource::class;
 
-    protected function getRedirectUrl(): string
-    {
-        return $this->getResource()::getUrl('index');
-    }
+    // protected function getRedirectUrl(): string
+    // {
+    //     return $this->getResource()::getUrl('index');
+    // }
 }

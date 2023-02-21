@@ -16,9 +16,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '13')->first();
+        $setting = Page::where('is_active', '1')->where('id', '15')->first();
         $blog_list = Blog::where('is_active', '1')->latest()->paginate(5);
-        return view('desktop.blog')->with(compact('setting', 'blog_list'));
+        return view('hgob.blog')->with(compact('setting', 'blog_list'));
     }
 
     /**
@@ -53,7 +53,7 @@ class BlogController extends Controller
         $setting = Page::where('is_active', '1')->where('id', '13')->first();
         $blog_detail = Blog::where('is_active', '1')->where('slug', $slug)->first();
         $blog_list = Blog::where('is_active', '1')->latest()->limit(5)->get();
-        return view('desktop.blog-detail')->with(compact('setting', 'blog_detail', 'blog_list'));
+        return view('hgob.blog-detail')->with(compact('setting', 'blog_detail', 'blog_list'));
     }
 
     /**

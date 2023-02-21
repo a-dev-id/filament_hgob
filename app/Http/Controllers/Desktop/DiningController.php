@@ -16,9 +16,9 @@ class DiningController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '4')->first();
+        $setting = Page::where('is_active', '1')->where('id', '6')->first();
         $dining_list = Dining::where('is_active', '1')->get();
-        return view('desktop.dining')->with(compact('setting', 'dining_list'));
+        return view('hgob.restaurant')->with(compact('setting', 'dining_list'));
     }
 
     /**

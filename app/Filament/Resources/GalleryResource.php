@@ -39,18 +39,22 @@ class GalleryResource extends Resource
                                 Forms\Components\TextInput::make('title')
                                     ->required()
                                     ->maxLength(191),
+
+                            ]),
+                            Grid::make(2)->schema([
+                                FileUpload::make('thumb'),
                                 FileUpload::make('image')
+                            ]),
+                            Grid::make(1)->schema([
+                                Toggle::make('is_active')
+                                    ->label('Publish')
+                                    ->inline(false)
+                                    ->onColor('success')
+                                    ->offColor('secondary')
                             ]),
                         ])
                         ->collapsible()
                         ->compact(),
-                    Grid::make(1)->schema([
-                        Toggle::make('is_active')
-                            ->label('Publish')
-                            ->inline(false)
-                            ->onColor('success')
-                            ->offColor('secondary')
-                    ]),
                 ])
             ])->columns(3);
     }
@@ -59,7 +63,7 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('image')->square(),
+                ImageColumn::make('thumb')->square(),
                 Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
                 Tables\Columns\TextColumn::make('is_active')->label('Published'),
                 IconColumn::make('is_active')->label('Published')

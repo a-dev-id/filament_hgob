@@ -38,19 +38,21 @@
             <div class="container-fluid justify-content-center text-uppercase">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a href="{{ route('index') }}" class="nav-link text-white px-2 px-xl-3"><i class="fa fa-home"></i></a></li>
-                    <li class="nav-item"><a href="{{ route('suites-villas.index') }}" class="nav-link text-white px-2 px-xl-3">Suites &amp; Villas</a></li>
+                    <li class="nav-item"><a href="{{ route('suites-villas.index') }}" class="nav-link text-white px-2 px-xl-3">Villas</a></li>
+                    <li class="nav-item"><a href="https://www.hanginggardensofbali.com/hidden-palace" class="nav-link text-white px-2 px-xl-3">Hidden Palace</a></li>
                     <li class="nav-item"><a href="{{ route('experiences.index') }}" class="nav-link text-white px-2 px-xl-3">Experiences</a></li>
-                    <li class="nav-item"><a href="{{ route('dining.index') }}" class="nav-link text-white px-2 px-xl-3">Dining</a></li>
+                    <li class="nav-item"><a href="{{ route('spa.index') }}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
+
                 </ul>
                 <a href="{{ route('index') }}" class="navbar-brand mx-2">
                     <img src="{{ asset('images/green-logo.png') }}" class="navlogo fade-in">
                 </a>
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a href="{{ route('spa.index') }}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
+                    <li class="nav-item"><a href="{{ route('dining.index') }}" class="nav-link text-white px-2 px-xl-3">Restaurant</a></li>
                     <li class="nav-item"><a href="{{ route('honeymoon.index') }}" class="nav-link text-white px-2 px-xl-3">Honeymoon</a></li>
                     <li class="nav-item"><a href="{{ route('weddings.index') }}" class="nav-link text-white px-2 px-xl-3">Weddings</a></li>
                     <li class="nav-item"><a href="{{ route('gallery.index') }}" class="nav-link text-white px-2 px-xl-3">Gallery</a></li>
-                    <li class="nav-item"><a href="{{ route('index') }}/contact-us" class="nav-link text-white px-2 px-xl-3">Contact Us</a></li>
+                    {{-- <li class="nav-item"><a href="{{ route('index') }}/contact-us" class="nav-link text-white px-2 px-xl-3">Contact Us</a></li> --}}
                 </ul>
             </div>
         </nav>

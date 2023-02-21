@@ -26,4 +26,9 @@ class Facility extends Model
     {
         return $this->belongsToMany(Villa::class);
     }
+
+    public function hiddenPalaces(): BelongsToMany
+    {
+        return $this->belongsToMany(HiddenPalace::class);
+    }
 }

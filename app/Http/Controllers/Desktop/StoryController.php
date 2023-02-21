@@ -15,8 +15,8 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '9')->first();
-        return view('desktop.story')->with(compact('setting'));
+        $setting = Page::where('is_active', '1')->where('id', '10')->first();
+        return view('hgob.story')->with(compact('setting'));
     }
 
     /**

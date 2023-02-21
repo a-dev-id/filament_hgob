@@ -16,9 +16,9 @@ class AwardController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '10')->first();
-        $award_list = Award::where('is_active', '1')->get();
-        return view('desktop.award')->with(compact('setting', 'award_list'));
+        $setting = Page::where('is_active', '1')->where('id', '11')->first();
+        $award_list = Award::where('is_active', '1')->latest()->paginate(5);;
+        return view('hgob.award')->with(compact('setting', 'award_list'));
     }
 
     /**

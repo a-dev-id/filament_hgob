@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
 use App\Models\Page;
+use App\Models\Spa;
 use Illuminate\Http\Request;
 
 class SpaController extends Controller
@@ -16,7 +17,8 @@ class SpaController extends Controller
     public function index()
     {
         $setting = Page::where('is_active', '1')->where('id', '5')->first();
-        return view('desktop.spa')->with(compact('setting'));
+        $spa_list = Spa::where('is_active', '1')->get();
+        return view('hgob.spa')->with(compact('setting', 'spa_list'));
     }
 
     /**

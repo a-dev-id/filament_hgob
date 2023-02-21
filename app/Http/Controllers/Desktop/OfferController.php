@@ -16,9 +16,9 @@ class OfferController extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '16')->first();
-        $offer_list = Offer::where('is_active', '1')->get();
-        return view('desktop.offer')->with(compact('setting', 'offer_list'));
+        $setting = Page::where('is_active', '1')->where('id', '17')->first();
+        $offer_list = Offer::where('is_active', '1')->latest()->get();
+        return view('hgob.offer')->with(compact('setting', 'offer_list'));
     }
 
     /**

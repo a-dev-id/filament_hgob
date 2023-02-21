@@ -15,21 +15,36 @@ use Illuminate\Support\Facades\Route;
 
 // desktop
 Route::resource('/', App\Http\Controllers\Desktop\HomeController::class);
-Route::resource('/suites-villas', App\Http\Controllers\Desktop\VillaController::class);
+
+// Route::resource('/villas', App\Http\Controllers\Desktop\VillaController::class);
+Route::get('/villas', [App\Http\Controllers\Desktop\VillaController::class, 'index'])->name('villas.index');
+Route::get('/villa/{slug}', [App\Http\Controllers\Desktop\VillaController::class, 'show'])->name('villas.show');
+
+Route::resource('/hidden-palace', App\Http\Controllers\Desktop\HiddenPalaceController::class);
 Route::resource('/experiences', App\Http\Controllers\Desktop\ExperienceController::class);
-Route::resource('/dining', App\Http\Controllers\Desktop\DiningController::class);
+Route::resource('/restaurant', App\Http\Controllers\Desktop\DiningController::class);
 Route::resource('/spa', App\Http\Controllers\Desktop\SpaController::class);
 Route::resource('/weddings', App\Http\Controllers\Desktop\WeddingController::class);
 Route::resource('/gallery', App\Http\Controllers\Desktop\GalleryController::class);
-Route::resource('/contact-us', App\Http\Controllers\Desktop\ContactController::class);
+Route::resource('/contact', App\Http\Controllers\Desktop\ContactController::class);
+
 Route::resource('/offers', App\Http\Controllers\Desktop\OfferController::class);
+// Route::get('/offers', [App\Http\Controllers\Desktop\OfferController::class, 'index'])->name('offers.index');
+// Route::get('/offer/{slug}', [App\Http\Controllers\Desktop\OfferController::class, 'show'])->name('offers.show');
+
 Route::resource('/honeymoon', App\Http\Controllers\Desktop\HoneymoonController::class);
 
 Route::resource('/story', App\Http\Controllers\Desktop\StoryController::class);
+Route::resource('/policy-legal', App\Http\Controllers\Desktop\PolicyLegalController::class);
 Route::resource('/awards', App\Http\Controllers\Desktop\AwardController::class);
+Route::resource('/press', App\Http\Controllers\Desktop\PressController::class);
 Route::resource('/videos', App\Http\Controllers\Desktop\VideoController::class);
 Route::resource('/day-guest', App\Http\Controllers\Desktop\DayGuestController::class);
-Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
+
+// Route::resource('/blog', App\Http\Controllers\Desktop\BlogController::class);
+Route::get('/blog', [App\Http\Controllers\Desktop\BlogController::class, 'index'])->name('blog.index');
+Route::get('/blog/post/{slug}', [App\Http\Controllers\Desktop\BlogController::class, 'show'])->name('blog.show');
+
 Route::resource('/careers', App\Http\Controllers\Desktop\CareerController::class);
 Route::resource('/virtual-tour', App\Http\Controllers\Desktop\VirtualTourController::class);
 
