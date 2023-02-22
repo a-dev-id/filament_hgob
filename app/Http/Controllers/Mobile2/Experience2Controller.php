@@ -16,7 +16,7 @@ class Experience2Controller extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '3')->first();
+        $setting = Page::where('is_active', '1')->where('id', '4')->first();
         $experience_list = Experience::where('is_active', '1')->get();
         return view('mobile2.experience')->with(compact('setting', 'experience_list'));
     }

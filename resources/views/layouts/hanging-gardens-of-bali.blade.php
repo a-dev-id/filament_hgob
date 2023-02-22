@@ -7,7 +7,7 @@
 
     @yield('meta')
 
-    <link rel="icon" type="image/png" href="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="{{asset('images/favicon.png')}}">
 
     {{--
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"> --}}
@@ -48,7 +48,7 @@
                     <li class="nav-item"><a href="{{route('spa.index')}}" class="nav-link text-white px-2 px-xl-3">Spa</a></li>
                 </ul>
                 <a href="{{route('index')}}" class="navbar-brand mx-2">
-                    <img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/hanginggarden-logo.png" class="navlogo fade-in" alt="Hanging Garden Of Bali">
+                    <img src="{{asset('images/hanginggarden-logo.png')}}" class="navlogo fade-in" alt="Hanging Garden Of Bali">
                 </a>
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item"><a href="{{route('restaurant.index')}}" class="nav-link text-white px-2 px-xl-3">Restaurant</a></li>
@@ -119,9 +119,9 @@
         </div>
     </header>
 
-    <a href="https://wa.me/628113800988" target="_blank" rel="noopener" class="whatsapp-floating"><img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/whatsapp-logo.png" alt="whatsapp"></a>
-    <a href="https://t.me/HGOB2022" target="_blank" rel="noopener" class="telegram-floating"><img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/logo-telegram.png" alt="whatsapp"></a>
-    <a href="https://www.tripadvisor.com/Hotel_Review-g608492-d583286-Reviews-Hanging_Gardens_of_Bali-Payangan_Gianyar_Regency_Bali.html" target="_blank" rel="noopener" class="trip-floating"><img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/trip.png" alt="whatsapp"></a>
+    <a href="https://wa.me/628113800988" target="_blank" rel="noopener" class="whatsapp-floating"><img src="{{asset('images/whatsapp-logo.png')}}" alt="whatsapp"></a>
+    <a href="https://t.me/HGOB2022" target="_blank" rel="noopener" class="telegram-floating"><img src="{{asset('images/logo-telegram.png')}}" alt="whatsapp"></a>
+    <a href="https://www.tripadvisor.com/Hotel_Review-g608492-d583286-Reviews-Hanging_Gardens_of_Bali-Payangan_Gianyar_Regency_Bali.html" target="_blank" rel="noopener" class="trip-floating"><img src="{{asset('images/trip.png')}}" alt="whatsapp"></a>
 
     {{$slot}}
 
@@ -169,16 +169,18 @@
                     </nav>
                     <div class="row">
                         <div class="col-12 col-md-4">
-                            <img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/awards/1.jpg" class="w-100" alt="Asia Awards Of Excellence">
+                            <img src="{{asset('images/1.jpg')}}" class="w-100" alt="Asia Awards Of Excellence">
                         </div>
                         <div class="col-12 col-md-4">
-                            <img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/awards/2.jpg" class="w-100" alt="World Luxury Restaurant Awards Winner 2019">
+                            <img src="{{asset('images/2.jpg')}}" class="w-100" alt="World Luxury Restaurant Awards Winner 2019">
                         </div>
                         <div class="col-12 col-md-4">
-                            <img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/awards/5.jpg" class="w-100" alt="World Luxury SPA Awards Winner 2016">
+                            <img src="{{asset('images/5.jpg')}}" class="w-100" alt="World Luxury SPA Awards Winner 2016">
                         </div>
                         <div class="col-12 col-md-6">
-                            <a href="https://www.luxurialifestyle.com/discovering-balis-best-luxury-resorts/" target="_blank"><img src="https://www.hanginggardensofbali.com/themes/mindimedia-theme/assets/images/awards/hanging-gardens.png" class="w-100" alt="Luxuria Life Style"></a>
+                            <a href="https://www.luxurialifestyle.com/discovering-balis-best-luxury-resorts/" target="_blank">
+                                <img src="{{asset('images/hanging-gardens.png')}}" class="w-100" alt="Luxuria Life Style">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -544,11 +546,11 @@
         if (screen.width < 768) {
         let url = "/";
         if (url == '/thank-you-newsletter') {
-            window.location = "https://www.hanginggardensofbali.com/m/thank-you-enquiry";
+            window.location = "{{route('index')}}/m/thank-you-enquiry";
         } else if (url == '/thank-you-enquiry') {
-            window.location = "https://www.hanginggardensofbali.com/m/thank-you-enquiry";
+            window.location = "{{route('index')}}/m/thank-you-enquiry";
         } else {
-            window.location = "https://www.hanginggardensofbali.com/m";
+            window.location = "{{route('index')}}/m";
         }
     }
     </script>

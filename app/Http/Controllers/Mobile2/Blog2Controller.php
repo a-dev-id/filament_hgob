@@ -16,7 +16,7 @@ class Blog2Controller extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '13')->first();
+        $setting = Page::where('is_active', '1')->where('id', '15')->first();
         $blog_list = Blog::where('is_active', '1')->latest()->paginate(5);
         return view('mobile2.blog')->with(compact('setting', 'blog_list'));
     }

@@ -16,7 +16,7 @@ class Wedding2Controller extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '6')->first();
+        $setting = Page::where('is_active', '1')->where('id', '8')->first();
         $wedding_list = Wedding::where('is_active', '1')->get();
         return view('mobile2.wedding')->with(compact('setting', 'wedding_list'));
     }

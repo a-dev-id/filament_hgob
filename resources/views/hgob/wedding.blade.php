@@ -86,8 +86,8 @@
                         <div class="col-12 col-md-1 order-2 d-flex align-items-center justify-content-center">
                             <div class="d-inline-flex flex-column align-items-center">
                                 <p class="experience-text-share">Share <i class="fas fa-long-arrow-alt-down"></i></p>
-                                <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//www.facebook.com/sharer/sharer.php?u=https://www.hanginggardensofbali.com/weddings#wed-intimate-wedding" target="_blank" class="experience-share experience-share-fb"><i class="fab fa-facebook-f"></i></a>
-                                <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//twitter.com/intent/tweet?text=The Intimate Wedding: https://www.hanginggardensofbali.com/weddings#wed-intimate-wedding" target="_blank" class="experience-share experience-share-tw"><i class="fab fa-twitter"></i></a>
+                                <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//www.facebook.com/sharer/sharer.php?u={{route('weddings.index')}}" target="_blank" class="experience-share experience-share-fb"><i class="fab fa-facebook-f"></i></a>
+                                <a onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=700');return false;" href="//twitter.com/intent/tweet?text=The Intimate Wedding: {{route('weddings.index')}}" target="_blank" class="experience-share experience-share-tw"><i class="fab fa-twitter"></i></a>
                             </div>
                         </div>
                         @if($loop->iteration % 2 == 0) <div class="col-12 col-md-6 order-1"> @else <div class="col-12 col-md-6 order-3"> @endif
