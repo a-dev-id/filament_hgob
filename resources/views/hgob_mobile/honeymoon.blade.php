@@ -9,14 +9,14 @@
 <meta property="og:description" content="{{ $setting->meta_description }}">
 <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Hanging Gardens of Bali">
 <meta name="twitter:description" content="{{ $setting->meta_description }}">
 <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
 <link rel="canonical" href="{{ route('mhoneymoon') }}" />
 @endsection
 
-<x-mobile2>
+<x-hanging-gardens-of-bali-mobile>
     <div class="wrapper page">
         <div class="header-page fixed-top">
             <div class="container-fluid">
@@ -80,4 +80,4 @@
                 @endforeach
             </div>
         </div>
-</x-mobile2>
+</x-hanging-gardens-of-bali-mobile>

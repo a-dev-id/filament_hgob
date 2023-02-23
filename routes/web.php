@@ -67,6 +67,7 @@ Route::get('/m', [App\Http\Controllers\Mobile2\Home2Controller::class, 'index'])
 Route::get('/m/blog', [App\Http\Controllers\Mobile2\Blog2Controller::class, 'index'])->name('mblog');
 Route::get('/m/blog/{slug}', [App\Http\Controllers\Mobile2\Blog2Controller::class, 'show'])->name('mblog.show');
 Route::get('/m/dining', [App\Http\Controllers\Mobile2\Dining2Controller::class, 'index'])->name('mdining');
+Route::get('/m/hidden-palace', [App\Http\Controllers\Mobile2\HiddenPalace2Controller::class, 'index'])->name('mhiddenpalace');
 Route::get('/m/experiences', [App\Http\Controllers\Mobile2\Experience2Controller::class, 'index'])->name('mexperience');
 Route::get('/m/gallery', [App\Http\Controllers\Mobile2\Gallery2Controller::class, 'index'])->name('mgallery');
 Route::get('/m/offer', [App\Http\Controllers\Mobile2\Offer2Controller::class, 'index'])->name('moffer');

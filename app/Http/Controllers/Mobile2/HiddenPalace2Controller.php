@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Mobile2;
 
 use App\Http\Controllers\Controller;
-use App\Models\Honeymoon;
+use App\Models\HiddenPalace;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
-class Honeymoon2Controller extends Controller
+class HiddenPalace2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class Honeymoon2Controller extends Controller
      */
     public function index()
     {
-        $setting = Page::where('is_active', '1')->where('id', '7')->first();
-        $honeymoon_list = Honeymoon::where('is_active', '1')->get();
-        return view('hgob_mobile.honeymoon')->with(compact('setting', 'honeymoon_list'));
+        $setting = Page::where('is_active', '1')->where('id', '3')->first();
+        $hidden_palace_list = HiddenPalace::where('is_active', '1')->get();
+        return view('hgob_mobile.hidden_palace')->with(compact('setting', 'hidden_palace_list'));
     }
 
     /**

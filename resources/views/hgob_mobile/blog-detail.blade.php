@@ -9,7 +9,7 @@
 <meta property="og:description" content="{{ $setting->meta_description }}">
 <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Hanging Gardens of Bali">
 <meta name="twitter:description" content="{{ $setting->meta_description }}">
 <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
@@ -18,12 +18,6 @@
 
 @push('css')
 <style>
-    .btn-primary {
-        color: #fff;
-        background-color: #5a8c14;
-        border-color: #5a8c14;
-    }
-
     .share-article i {
         font-size: 24px;
     }
@@ -34,7 +28,7 @@
 @push('js')
 @endpush
 
-<x-mobile2>
+<x-hanging-gardens-of-bali-mobile>
     <div class="wrapper page">
         <div class="header-page fixed-top">
             <div class="container-fluid">
@@ -66,4 +60,4 @@
                 </div>
             </div>
         </div>
-</x-mobile2>
+</x-hanging-gardens-of-bali-mobile>

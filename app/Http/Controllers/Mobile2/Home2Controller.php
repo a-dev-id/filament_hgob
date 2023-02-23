@@ -24,7 +24,8 @@ class Home2Controller extends Controller
         $wedding = Page::where('is_active', '1')->where('id', '8')->first();
         $blog = Page::where('is_active', '1')->where('id', '15')->first();
         $honeymoon = Page::where('is_active', '1')->where('id', '7')->first();
-        return view('mobile2.home')->with(compact('setting', 'villa', 'experience', 'dining', 'offer', 'spa', 'wedding', 'blog', 'honeymoon'));
+        $hidden_palace = Page::where('is_active', '1')->where('id', '3')->first();
+        return view('hgob_mobile.home')->with(compact('setting', 'villa', 'experience', 'dining', 'offer', 'spa', 'wedding', 'blog', 'honeymoon', 'hidden_palace'));
     }
 
     /**

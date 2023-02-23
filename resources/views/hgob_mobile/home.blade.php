@@ -9,7 +9,7 @@
 <meta property="og:description" content="{{ $setting->meta_description }}">
 <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Hanging Gardens of Bali">
 <meta name="twitter:description" content="{{ $setting->meta_description }}">
 <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
@@ -18,7 +18,7 @@
 
 @section('home_active', 'active')
 
-<x-mobile2>
+<x-hanging-gardens-of-bali-mobile>
     <div class="wrapper ">
         <div class="position-relative">
             <div class="slider">
@@ -38,8 +38,8 @@
         <div class="container-fluid about">
             <div class="row">
                 <div class="col-12 py-3">
+                    <img src="{{asset('images/hanginggarden-logo.png')}}" class="m-auto img-logo mb-4" style="width: 70%">
                     <p class="mb-0">
-                        <img src="{{asset('images/green-logo.png')}}" class="float-start img-logo me-3">
                         {!! $setting->description !!}
                     </p>
                 </div>
@@ -65,14 +65,14 @@
                         <div class="row g-1">
                             <div class="col-12 h-90px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$villa->banner_image)}}" alt="Elevate Bali - {{$villa->title}}">
-                                    <a href="{{route('mvilla')}}">{{$villa->title}}</a>
+                                    <img src="{{asset('storage/'.$villa->banner_image)}}" alt="{{config('app.name')}} - {{$villa->page_name}}">
+                                    <a href="{{route('mvilla')}}">{{$villa->page_name}}</a>
                                 </div>
                             </div>
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$experience->banner_image)}}" alt="Elevate Bali - {{$experience->title}}">
-                                    <a href="{{route('mexperience')}}">{{$experience->title}}</a>
+                                    <img src="{{asset('storage/'.$experience->banner_image)}}" alt="{{config('app.name')}} - {{$experience->page_name}}">
+                                    <a href="{{route('mexperience')}}">{{$experience->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -81,44 +81,24 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$offer->banner_image)}}" alt="Elevate Bali - {{$offer->title}}">
-                                    <a href="{{route('moffer')}}">{{$offer->title}}</a>
+                                    <img src="{{asset('storage/'.$offer->banner_image)}}" alt="{{config('app.name')}} - {{$offer->page_name}}">
+                                    <a href="{{route('moffer')}}">{{$offer->page_name}}</a>
                                 </div>
                             </div>
                             <div class="col-12 h-90px">
                                 <div class="tiles">
-                                    <img src="{{asset('images/maps.jpg')}}" alt="Elevate Bali Maps">
+                                    <img src="{{asset('images/maps.jpg')}}" alt="Maps">
                                     <a href="https://goo.gl/maps/zBod1yFj1YRMUBfm9">Maps</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-5">
+                    <div class="col-12">
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$dining->banner_image)}}" alt="Elevate Bali - {{$dining->title}}">
-                                    <a href="{{route('mdining')}}">{{$dining->title}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="row g-1">
-                            <div class="col-12 h-150px">
-                                <div class="tiles">
-                                    <img src="{{asset('storage/'.$wedding->banner_image)}}" alt="Elevate Bali - {{$wedding->title}}">
-                                    <a href="{{route('mwedding')}}">{{$wedding->title}}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="row g-1">
-                            <div class="col-12 h-150px">
-                                <div class="tiles">
-                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="Elevate Bali - {{$honeymoon->title}}">
-                                    <a href="{{route('mhoneymoon')}}">{{$honeymoon->title}}</a>
+                                    <img src="{{asset('storage/'.$hidden_palace->banner_image)}}" alt="{{config('app.name')}} - {{$hidden_palace->page_name}}">
+                                    <a href="{{route('mhiddenpalace')}}">{{$hidden_palace->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -127,8 +107,38 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="Elevate Bali - {{$blog->title}}">
-                                    <a href="{{route('mblog')}}">{{$blog->title}}</a>
+                                    <img src="{{asset('storage/'.$dining->banner_image)}}" alt="{{config('app.name')}} - {{$dining->page_name}}">
+                                    <a href="{{route('mdining')}}">{{$dining->page_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="row g-1">
+                            <div class="col-12 h-150px">
+                                <div class="tiles">
+                                    <img src="{{asset('storage/'.$wedding->banner_image)}}" alt="{{config('app.name')}} - {{$wedding->page_name}}">
+                                    <a href="{{route('mwedding')}}">{{$wedding->page_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="row g-1">
+                            <div class="col-12 h-150px">
+                                <div class="tiles">
+                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="{{config('app.name')}} - {{$honeymoon->page_name}}">
+                                    <a href="{{route('mhoneymoon')}}">{{$honeymoon->page_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="row g-1">
+                            <div class="col-12 h-150px">
+                                <div class="tiles">
+                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="{{config('app.name')}} - {{$blog->page_name}}">
+                                    <a href="{{route('mblog')}}">{{$blog->page_name}}</a>
                                 </div>
                             </div>
                         </div>
@@ -137,4 +147,4 @@
             </div>
         </div>
     </div>
-</x-mobile2>
+</x-hanging-gardens-of-bali-mobile>

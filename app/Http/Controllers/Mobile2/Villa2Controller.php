@@ -18,7 +18,7 @@ class Villa2Controller extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '2')->first();
         $villa_list = Villa::where('is_active', '1')->get();
-        return view('mobile2.villa')->with(compact('setting', 'villa_list'));
+        return view('hgob_mobile.villa')->with(compact('setting', 'villa_list'));
     }
 
     /**

@@ -18,7 +18,7 @@ class Gallery2Controller extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '9')->first();
         $gallery_list = Gallery::where('is_active', '1')->get();
-        return view('mobile2.gallery')->with(compact('setting', 'gallery_list'));
+        return view('hgob_mobile.gallery')->with(compact('setting', 'gallery_list'));
     }
 
     /**

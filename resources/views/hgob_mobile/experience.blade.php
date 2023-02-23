@@ -9,14 +9,14 @@
 <meta property="og:description" content="{{ $setting->meta_description }}">
 <meta property="og:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
-<meta name="twitter:title" content="{{ $setting->meta_title }} | Nandini Jungle by Hanging Gardens">
+<meta name="twitter:title" content="{{ $setting->meta_title }} | Hanging Gardens of Bali">
 <meta name="twitter:description" content="{{ $setting->meta_description }}">
 <meta name="twitter:image" content="{{ asset('storage/' . $setting->banner_image) }}">
 
 <link rel="canonical" href="{{ route('mexperience') }}" />
 @endsection
 
-<x-mobile2>
+<x-hanging-gardens-of-bali-mobile>
     <div class="wrapper page">
         <div class="header-page fixed-top">
             <div class="container-fluid">
@@ -54,7 +54,7 @@
                             </div>
                             <div class="button-wrapper text-end">
                                 <button type="button" class="btn btn-outline-custom" data-bs-toggle="modal" data-bs-target="#{{$data->slug}}">View Details</button>
-                                <a href="mailto:reservations@nandinibali.com" class="btn btn-custom">Inquire Now</a>
+                                <a href="mailto:reservations@hanginggardensofbali.com" class="btn btn-custom">Inquire Now</a>
                             </div>
                         </div>
                         <!-- Modal -->
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="modal-footer button-wrapper">
                                         <button type="button" class="btn btn-outline-custom" data-bs-dismiss="modal">Close</button>
-                                        <a href="mailto:reservations@nandinibali.com" class="btn btn-custom">Inquire Now</a>
+                                        <a href="mailto:reservations@hanginggardensofbali.com" class="btn btn-custom">Inquire Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,4 +80,4 @@
                 @endforeach
             </div>
         </div>
-</x-mobile2>
+</x-hanging-gardens-of-bali-mobile>

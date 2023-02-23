@@ -18,7 +18,7 @@ class Dining2Controller extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '6')->first();
         $dining_list = Dining::where('is_active', '1')->get();
-        return view('mobile2.dining')->with(compact('setting', 'dining_list'));
+        return view('hgob_mobile.dining')->with(compact('setting', 'dining_list'));
     }
 
     /**
