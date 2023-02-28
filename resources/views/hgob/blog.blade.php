@@ -49,8 +49,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="underline fw-bold text-uppercase">Blog</h1>
-                    Learn more about the hidden gems in Bali, attractions to visit and our other insider tips to guide your getaway in Bali.
+                    <h1 class="underline fw-bold text-uppercase">{{$setting->title}}</h1>
+                    {!! $setting->description !!}
                 </div>
             </div>
         </div>

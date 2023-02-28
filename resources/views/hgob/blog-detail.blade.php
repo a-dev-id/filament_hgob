@@ -67,5 +67,6 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 </x-hanging-gardens-of-bali>
