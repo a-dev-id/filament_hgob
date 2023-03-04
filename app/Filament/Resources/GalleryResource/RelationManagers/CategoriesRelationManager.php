@@ -4,17 +4,13 @@ namespace App\Filament\Resources\GalleryResource\RelationManagers;
 
 use Closure;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Actions\DetachAction;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class CategoriesRelationManager extends RelationManager
@@ -41,7 +37,7 @@ class CategoriesRelationManager extends RelationManager
                     ->label('Publish')
                     ->onColor('primary')
                     ->offColor('secondary')
-                    ->inline(false)
+                    ->inline(false),
             ])->columns(1);
     }
 

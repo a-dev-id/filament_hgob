@@ -11,8 +11,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ImagesRelationManager extends RelationManager
 {
@@ -31,7 +29,7 @@ class ImagesRelationManager extends RelationManager
                 Toggle::make('is_active')
                     ->offColor('secondary')
                     ->onColor('primary')
-                    ->inline(false)
+                    ->inline(false),
             ]);
     }
 

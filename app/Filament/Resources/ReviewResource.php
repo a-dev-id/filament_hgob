@@ -3,9 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ReviewResource\Pages;
-use App\Filament\Resources\ReviewResource\RelationManagers;
 use App\Models\Review;
-use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
@@ -19,15 +17,15 @@ use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ReviewResource extends Resource
 {
     protected static ?string $model = Review::class;
 
     protected static ?int $navigationSort = 12;
+
     protected static ?string $navigationIcon = 'heroicon-o-chat-alt';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -50,7 +48,7 @@ class ReviewResource extends Resource
                 Toggle::make('is_active')
                     ->label('Publish')
                     ->onColor('primary')
-                    ->offColor('secondary')
+                    ->offColor('secondary'),
             ]);
     }
 

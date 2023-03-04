@@ -114,45 +114,6 @@
 
 <x-hanging-gardens-of-bali>
 
-    @foreach ($popup_list as $data)
-    <div class="modal fade" id="BannerPopUp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            @if ($data->button_text == 'with_text')
-            <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 70px;">
-                <div class="modal-body pb-4">
-
-                    <div class="row">
-                        <div class="col-md-12 text-center mb-2">
-                            <img class="" src="{{ asset('storage/' . $data->cover_image) }}" alt="{{ $data->title }}" style="max-width: 100%">
-                        </div>
-                        <div class="col-md-12 text-center fs-3">
-                            <h3 class="">{{ $data->title }}</h3>
-                            <p class="mb-4" style="font-size: 16px;">{{ $data->excerpt }}</p>
-                            <a class="btn btn-default text-decoration-none fs-5" href="{{ route('blog.show', [$data->slug]) }}" style="background-color:#6ea027; color:white;">Learn More</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            @elseif ($data->button_text == 'full_image')
-            <div class="modal-content" style="background-color: white; border-radius: 0px!important; top: 100px;">
-                <div class="modal-body p-0">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-
-                            <a href="{{ route('blog.show', [$data->button_link]) }}">
-                                <img class="img-fluid w-100" src="{{ asset('storage/' . $data->cover_image) }}">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @else
-            @endif
-        </div>
-    </div>
-    @endforeach
-
     <section class="vh-100 overflow-hidden position-relative">
         <iframe src="{{ $setting->button_link }}" class="header-iframe-youtube"></iframe>
     </section>
@@ -281,9 +242,9 @@
                             <h4 class="mt-4 mb-4 fs-5 fs-xl-4 text-uppercase">{{$data->title}}</h4>
 
                             @if ($data->min_night == !null)
-                            <a href="https://book-directonline.com/properties/hanginggardensofbalidirect?locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-gold text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
+                            <a href="https://book-directonline.com/properties/hanginggardensofbalidirect?promocode={{$data->promo_code}}&locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-gold text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
                             @elseif ($data->button_text == "Learn More")
-                            <a href="{{$data->button_link}}?text=Hi, I would like to Book: *Special Offer - {{ $data->title }}*" class="btn btn-gold text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
+                            <a href="{{$data->button_link}}?text=Hi, I would like to Book: Special Offer - {{ $data->title }}" class="btn btn-gold text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
                             @else
                             <a href="{{$data->button_link}}" class="btn btn-gold text-uppercase px-4 rounded-0" target="_blank">{{$data->button_text}}</a>
                             @endif

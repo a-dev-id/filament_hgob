@@ -3,9 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PressRoomResource\Pages;
-use App\Filament\Resources\PressRoomResource\RelationManagers;
 use App\Models\PressRoom;
-use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
@@ -17,15 +15,15 @@ use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PressRoomResource extends Resource
 {
     protected static ?string $model = PressRoom::class;
 
     protected static ?int $navigationSort = 11;
+
     protected static ?string $navigationIcon = 'heroicon-o-video-camera';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -38,7 +36,7 @@ class PressRoomResource extends Resource
                 Toggle::make('is_active')
                     ->label('Publish')
                     ->onColor('primary')
-                    ->offColor('secondary')
+                    ->offColor('secondary'),
             ])->columns(1);
     }
 

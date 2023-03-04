@@ -3,12 +3,9 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CareerResource\Pages;
-use App\Filament\Resources\CareerResource\RelationManagers;
 use App\Models\Career;
-use Filament\Forms;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
@@ -17,17 +14,16 @@ use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CareerResource extends Resource
 {
     protected static ?string $model = Career::class;
 
     protected static ?int $navigationSort = 10;
+
     protected static ?string $navigationGroup = 'General';
+
     protected static ?string $navigationIcon = 'heroicon-o-calendar';
 
     public static function form(Form $form): Form
@@ -44,7 +40,7 @@ class CareerResource extends Resource
                 Toggle::make('is_active')
                     ->label('Publish')
                     ->onColor('primary')
-                    ->offColor('secondary')
+                    ->offColor('secondary'),
             ])->columns(1);
     }
 

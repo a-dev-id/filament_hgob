@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Facility extends Model
@@ -19,8 +18,6 @@ class Facility extends Model
 
     /**
      * The villas that belong to the Facility
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function villas(): BelongsToMany
     {

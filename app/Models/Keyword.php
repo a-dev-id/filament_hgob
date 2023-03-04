@@ -16,8 +16,6 @@ class Keyword extends Model
 
     /**
      * Get the user that owns the Keyword
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function page(): BelongsTo
     {

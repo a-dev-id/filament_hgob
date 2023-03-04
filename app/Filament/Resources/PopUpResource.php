@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PopUpResource\Pages;
-use App\Filament\Resources\PopUpResource\RelationManagers;
 use App\Models\Blog;
 use App\Models\PopUp;
 use Closure;
@@ -12,7 +11,6 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -20,8 +18,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class PopUpResource extends Resource
@@ -29,7 +25,9 @@ class PopUpResource extends Resource
     protected static ?string $model = PopUp::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+
     protected static ?int $navigationSort = 1;
+
     protected static ?string $navigationGroup = 'Advance';
 
     public static function form(Form $form): Form
@@ -68,7 +66,7 @@ class PopUpResource extends Resource
                     ->label('Publish')
                     ->inline(false)
                     ->onColor('success')
-                    ->offColor('secondary')
+                    ->offColor('secondary'),
             ])->columns(1);
     }
 

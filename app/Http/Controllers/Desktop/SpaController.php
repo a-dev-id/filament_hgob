@@ -18,6 +18,7 @@ class SpaController extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '5')->first();
         $spa_list = Spa::where('is_active', '1')->get();
+
         return view('hgob.spa')->with(compact('setting', 'spa_list'));
     }
 
@@ -34,7 +35,6 @@ class SpaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,6 @@ class SpaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

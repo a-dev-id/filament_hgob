@@ -19,8 +19,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class ExperienceResource extends Resource
@@ -28,7 +26,9 @@ class ExperienceResource extends Resource
     protected static ?string $model = Experience::class;
 
     protected static ?int $navigationSort = 4;
+
     protected static ?string $navigationIcon = 'heroicon-o-globe';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -54,7 +54,7 @@ class ExperienceResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ])
                         ->collapsible()
@@ -93,14 +93,14 @@ class ExperienceResource extends Resource
                             Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('price')
                                     ->maxLength(191),
-                                TextInput::make('per')
+                                TextInput::make('per'),
                             ]),
                             Grid::make(1)->schema([
                                 Toggle::make('is_active')
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

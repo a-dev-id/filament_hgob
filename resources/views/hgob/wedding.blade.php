@@ -55,6 +55,7 @@
                 <div class="col-12 col-md-10 offset-md-1 text-center">
                     <h1 class="underline fw-bold text-uppercase">{{$setting->title}}</h1>
                     {!! $setting->description !!}
+                    {{-- <a href="{{$setting->button_link}}" download="wedding" class="btn btn-gold text-uppercase px-3 py-2 rounded-0"><i class="fas fa-download me-2"></i> {{$setting->button_text}}</a> --}}
                 </div>
             </div>
         </div>

@@ -20,6 +20,7 @@ class GalleryController extends Controller
         $setting = Page::where('is_active', '1')->where('id', '9')->first();
         $gallery_list = Gallery::where('is_active', '1')->get();
         $categories = Category::where('is_active', '1')->get();
+
         return view('hgob.gallery')->with(compact('setting', 'gallery_list', 'categories'));
     }
 
@@ -36,7 +37,6 @@ class GalleryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -69,7 +69,6 @@ class GalleryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

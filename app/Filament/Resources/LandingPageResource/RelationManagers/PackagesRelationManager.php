@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\LandingPageResource\RelationManagers;
 
-use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
@@ -16,9 +15,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\Str;
 
 class PackagesRelationManager extends RelationManager
 {
@@ -41,7 +37,7 @@ class PackagesRelationManager extends RelationManager
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ])
                         ->collapsible()
@@ -83,14 +79,14 @@ class PackagesRelationManager extends RelationManager
                             Grid::make(1)->schema([
                                 Forms\Components\TextInput::make('promo_code')
                                     ->maxLength(191),
-                                TextInput::make('Promo Code')
+                                TextInput::make('Promo Code'),
                             ]),
                             Grid::make(1)->schema([
                                 Toggle::make('is_active')
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

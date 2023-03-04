@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AwardResource\Pages;
-use App\Filament\Resources\AwardResource\RelationManagers;
 use App\Models\Award;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
@@ -17,16 +16,15 @@ use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\TextInputColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AwardResource extends Resource
 {
     protected static ?string $model = Award::class;
 
     protected static ?int $navigationSort = 8;
+
     protected static ?string $navigationGroup = 'General';
+
     protected static ?string $navigationIcon = 'heroicon-o-gift';
 
     public static function form(Form $form): Form
@@ -42,7 +40,7 @@ class AwardResource extends Resource
                 Toggle::make('is_active')
                     ->label('Publish')
                     ->onColor('primary')
-                    ->offColor('secondary')
+                    ->offColor('secondary'),
             ])->columns(1);
     }
 

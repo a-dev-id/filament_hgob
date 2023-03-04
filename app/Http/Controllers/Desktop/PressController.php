@@ -18,6 +18,7 @@ class PressController extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '12')->first();
         $press_list = PressRoom::where('is_active', '1')->get();
+
         return view('hgob.press')->with(compact('setting', 'press_list'));
     }
 
@@ -34,7 +35,6 @@ class PressController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,6 @@ class PressController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

@@ -18,6 +18,7 @@ class Wedding2Controller extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '8')->first();
         $wedding_list = Wedding::where('is_active', '1')->get();
+
         return view('hgob_mobile.wedding')->with(compact('setting', 'wedding_list'));
     }
 
@@ -34,7 +35,6 @@ class Wedding2Controller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,6 @@ class Wedding2Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

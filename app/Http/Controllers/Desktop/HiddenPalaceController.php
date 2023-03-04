@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Desktop;
 
 use App\Http\Controllers\Controller;
-use App\Models\Page;
 use App\Models\HiddenPalace;
+use App\Models\Page;
 use Illuminate\Http\Request;
 
 class HiddenPalaceController extends Controller
@@ -18,6 +18,7 @@ class HiddenPalaceController extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '3')->first();
         $hidden_palace_list = HiddenPalace::where('is_active', '1')->get();
+
         return view('hgob.hidden-palace')->with(compact('setting', 'hidden_palace_list'));
     }
 
@@ -34,7 +35,6 @@ class HiddenPalaceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,6 @@ class HiddenPalaceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

@@ -10,8 +10,6 @@ use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class FacilitiesRelationManager extends RelationManager
 {
@@ -31,7 +29,7 @@ class FacilitiesRelationManager extends RelationManager
                     ->label('Publish')
                     ->onColor('primary')
                     ->offColor('secondary')
-                    ->inline(false)
+                    ->inline(false),
             ])->columns(2);
     }
 

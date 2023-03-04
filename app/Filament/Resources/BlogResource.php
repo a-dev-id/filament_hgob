@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BlogResource\Pages;
-use App\Filament\Resources\BlogResource\RelationManagers;
 use App\Models\Blog;
 use App\Models\Keyword;
 use Closure;
@@ -22,9 +21,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Mail\Markdown;
 use Illuminate\Support\Str;
 
 class BlogResource extends Resource
@@ -32,7 +28,9 @@ class BlogResource extends Resource
     protected static ?string $model = Blog::class;
 
     protected static ?int $navigationSort = 9;
+
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -122,7 +120,7 @@ class BlogResource extends Resource
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\LandingPageResource\Pages;
-use App\Filament\Resources\LandingPageResource\RelationManagers;
 use App\Filament\Resources\LandingPageResource\RelationManagers\PackagesRelationManager;
 use App\Models\LandingPage;
 use Closure;
@@ -12,7 +11,6 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -20,8 +18,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class LandingPageResource extends Resource
@@ -29,7 +25,9 @@ class LandingPageResource extends Resource
     protected static ?string $model = LandingPage::class;
 
     protected static ?int $navigationSort = 1;
+
     protected static ?string $navigationGroup = 'Advance';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form
@@ -55,7 +53,7 @@ class LandingPageResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ])
                         ->collapsible()
@@ -93,7 +91,7 @@ class LandingPageResource extends Resource
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

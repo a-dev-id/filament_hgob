@@ -19,8 +19,6 @@ class HiddenPalaceImage extends Model
 
     /**
      * Get the villa that owns the VillaImage
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function hiddenPalace(): BelongsTo
     {

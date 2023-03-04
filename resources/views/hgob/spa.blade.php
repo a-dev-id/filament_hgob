@@ -468,7 +468,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn bbtn-outline-gold text-uppercase rounded-0 py-2 px-5 fw-bold" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-sm btn-outline-gold text-uppercase py-2 px-3 rounded-0" data-bs-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-gold text-uppercase py-2 fw-bold rounded-0">{{ $data->button_text }}w</button>
                     </div>
                 </div>

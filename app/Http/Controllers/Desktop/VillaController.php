@@ -18,6 +18,7 @@ class VillaController extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '2')->first();
         $villa_list = Villa::where('is_active', '1')->get();
+
         return view('hgob.villa')->with(compact('setting', 'villa_list'));
     }
 
@@ -34,7 +35,6 @@ class VillaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -52,6 +52,7 @@ class VillaController extends Controller
     {
         $setting = Villa::where('is_active', '1')->where('slug', $slug)->first();
         $villa_list = Villa::where('is_active', '1')->get();
+
         return view('hgob.villa-detail')->with(compact('setting', 'villa_list'));
     }
 
@@ -69,7 +70,6 @@ class VillaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

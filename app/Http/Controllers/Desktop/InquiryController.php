@@ -33,7 +33,6 @@ class InquiryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -51,7 +50,6 @@ class InquiryController extends Controller
             'message' => $request->message,
         ]);
 
-
         $mailData = [
             'package_title' => $request->package_title,
             'full_name' => $request->full_name,
@@ -63,6 +61,7 @@ class InquiryController extends Controller
         Mail::to($request->email)
             // ->bcc('info@nandinibali.com', 'reservation@nandinibali.com')
             ->send(new InquiryMail($mailData));
+
         return redirect()->route('thank-you.index');
     }
 
@@ -91,7 +90,6 @@ class InquiryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

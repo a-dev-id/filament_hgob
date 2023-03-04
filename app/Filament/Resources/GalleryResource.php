@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\GalleryResource\Pages;
-use App\Filament\Resources\GalleryResource\RelationManagers;
 use App\Filament\Resources\GalleryResource\RelationManagers\CategoriesRelationManager;
 use App\Models\Gallery;
 use Filament\Forms;
@@ -17,15 +16,15 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class GalleryResource extends Resource
 {
     protected static ?string $model = Gallery::class;
 
     protected static ?int $navigationSort = 14;
+
     protected static ?string $navigationIcon = 'heroicon-o-photograph';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -43,19 +42,19 @@ class GalleryResource extends Resource
                             ]),
                             Grid::make(2)->schema([
                                 FileUpload::make('thumb'),
-                                FileUpload::make('image')
+                                FileUpload::make('image'),
                             ]),
                             Grid::make(1)->schema([
                                 Toggle::make('is_active')
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()
                         ->compact(),
-                ])
+                ]),
             ])->columns(3);
     }
 

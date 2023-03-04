@@ -5,15 +5,12 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\VillaResource\Pages;
 use App\Filament\Resources\VillaResource\RelationManagers\FacilitiesRelationManager;
 use App\Filament\Resources\VillaResource\RelationManagers\ImagesRelationManager;
-use App\Models\Facility;
 use App\Models\Keyword;
 use App\Models\Villa;
 use Closure;
 use Filament\Forms;
-use Filament\Forms\Components\Card;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
@@ -25,8 +22,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class VillaResource extends Resource
@@ -34,7 +29,9 @@ class VillaResource extends Resource
     protected static ?string $model = Villa::class;
 
     protected static ?int $navigationSort = 1;
+
     protected static ?string $navigationIcon = 'heroicon-s-home';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -60,7 +57,7 @@ class VillaResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ])
                         ->collapsible()
@@ -102,14 +99,14 @@ class VillaResource extends Resource
                             Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('price')
                                     ->maxLength(191),
-                                TextInput::make('per')
+                                TextInput::make('per'),
                             ]),
                             Grid::make(1)->schema([
                                 Toggle::make('is_active')
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => "Nandini Jungle by Hanging Gardens",
+    'name' => 'Nandini Jungle by Hanging Gardens',
 
     /*
     |--------------------------------------------------------------------------

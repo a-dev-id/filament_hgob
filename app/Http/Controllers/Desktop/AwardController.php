@@ -17,7 +17,8 @@ class AwardController extends Controller
     public function index()
     {
         $setting = Page::where('is_active', '1')->where('id', '11')->first();
-        $award_list = Award::where('is_active', '1')->latest()->paginate(5);;
+        $award_list = Award::where('is_active', '1')->latest()->paginate(5);
+
         return view('hgob.award')->with(compact('setting', 'award_list'));
     }
 
@@ -34,7 +35,6 @@ class AwardController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -67,7 +67,6 @@ class AwardController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

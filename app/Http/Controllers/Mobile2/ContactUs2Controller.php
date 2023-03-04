@@ -16,6 +16,7 @@ class ContactUs2Controller extends Controller
     public function index()
     {
         $setting = Page::where('is_active', '1')->where('id', '13')->first();
+
         return view('hgob_mobile.contact')->with(compact('setting'));
     }
 
@@ -32,7 +33,6 @@ class ContactUs2Controller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -65,7 +65,6 @@ class ContactUs2Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

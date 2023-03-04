@@ -35,8 +35,6 @@ class HiddenPalace extends Model
 
     /**
      * The facilities that belong to the Villa
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     public function facilities(): BelongsToMany
     {
@@ -45,8 +43,6 @@ class HiddenPalace extends Model
 
     /**
      * Get all of the images for the Villa
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function images(): HasMany
     {

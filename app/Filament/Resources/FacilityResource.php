@@ -3,11 +3,8 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\FacilityResource\Pages;
-use App\Filament\Resources\FacilityResource\RelationManagers;
 use App\Models\Facility;
-use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Form;
@@ -16,15 +13,15 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class FacilityResource extends Resource
 {
     protected static ?string $model = Facility::class;
 
     protected static ?int $navigationSort = 3;
+
     protected static ?string $navigationIcon = 'heroicon-o-eye';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -37,7 +34,7 @@ class FacilityResource extends Resource
                     ->label('Publish')
                     ->inline(false)
                     ->onColor('success')
-                    ->offColor('secondary')
+                    ->offColor('secondary'),
             ])->columns(2);
     }
 

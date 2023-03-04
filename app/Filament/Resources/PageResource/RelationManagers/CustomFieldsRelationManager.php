@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\PageResource\RelationManagers;
 
-use Closure;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
@@ -16,8 +15,6 @@ use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CustomFieldsRelationManager extends RelationManager
 {
@@ -40,7 +37,7 @@ class CustomFieldsRelationManager extends RelationManager
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ]),
 
@@ -61,10 +58,10 @@ class CustomFieldsRelationManager extends RelationManager
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ]),
-                ])
+                ]),
             ]);
     }
 

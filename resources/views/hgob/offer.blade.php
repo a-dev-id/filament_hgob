@@ -102,7 +102,7 @@
 
                                 <p class="text-center">
                                     @if ($data->min_night == !null)
-                                    <a href="https://book-directonline.com/properties/hanginggardensofbalidirect?locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-sm btn-outline-gold text-uppercase py-2 px-3 rounded-0 mt-3" target="_blank">{{$data->button_text}}</a>
+                                    <a href="https://book-directonline.com/properties/hanginggardensofbalidirect?promocode={{$data->promo_code}}&locale=en&propertyId=9897&checkInDate={{date('Y-m-d')}}&checkOutDate={{date('Y-m-d',strtotime('+'.$data->min_night.' days'))}}&currency=USD&trackPage=yes" class="btn btn-sm btn-outline-gold text-uppercase py-2 px-3 rounded-0 mt-3" target="_blank">{{$data->button_text}}</a>
                                     @elseif ($data->button_text == "Learn More")
                                     <a href="{{$data->button_link}}?text=Hi, I would like to Book: *Special Offer - {{ $data->title }}*" class="btn btn-sm btn-outline-gold text-uppercase py-2 px-3 rounded-0 mt-3" target="_blank">{{$data->button_text}}</a>
                                     @else

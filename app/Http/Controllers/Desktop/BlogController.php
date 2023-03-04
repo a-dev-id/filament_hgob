@@ -18,6 +18,7 @@ class BlogController extends Controller
     {
         $setting = Page::where('is_active', '1')->where('id', '15')->first();
         $blog_list = Blog::where('is_active', '1')->latest()->paginate(5);
+
         return view('hgob.blog')->with(compact('setting', 'blog_list'));
     }
 
@@ -34,7 +35,6 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,6 +53,7 @@ class BlogController extends Controller
         $setting = Page::where('is_active', '1')->where('id', '13')->first();
         $blog_detail = Blog::where('is_active', '1')->where('slug', $slug)->first();
         $blog_list = Blog::where('is_active', '1')->latest()->limit(5)->get();
+
         return view('hgob.blog-detail')->with(compact('setting', 'blog_detail', 'blog_list'));
     }
 
@@ -70,7 +71,6 @@ class BlogController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

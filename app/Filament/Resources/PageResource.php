@@ -22,8 +22,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class PageResource extends Resource
@@ -31,7 +29,9 @@ class PageResource extends Resource
     protected static ?string $model = Page::class;
 
     protected static ?int $navigationSort = 12;
+
     protected static ?string $navigationGroup = 'Setting';
+
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
     public static function form(Form $form): Form
@@ -62,7 +62,7 @@ class PageResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ])
                         ->collapsible()
@@ -113,7 +113,7 @@ class PageResource extends Resource
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

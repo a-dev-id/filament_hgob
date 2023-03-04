@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\OfferResource\Pages;
-use App\Filament\Resources\OfferResource\RelationManagers;
 use App\Filament\Resources\OfferResource\RelationManagers\ImagesRelationManager;
 use App\Models\Offer;
 use Closure;
@@ -20,8 +19,6 @@ use Filament\Resources\Table;
 use Filament\Tables;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
 class OfferResource extends Resource
@@ -29,7 +26,9 @@ class OfferResource extends Resource
     protected static ?string $model = Offer::class;
 
     protected static ?int $navigationSort = 3;
+
     protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
+
     protected static ?string $navigationGroup = 'General';
 
     public static function form(Form $form): Form
@@ -55,7 +54,7 @@ class OfferResource extends Resource
                                     ->maxLength(191),
                                 Forms\Components\Textarea::make('excerpt')
                                     ->maxLength(65535),
-                                RichEditor::make('description')
+                                RichEditor::make('description'),
                             ]),
                         ])
                         ->collapsible()
@@ -94,15 +93,16 @@ class OfferResource extends Resource
                             Grid::make(2)->schema([
                                 Forms\Components\TextInput::make('price')
                                     ->maxLength(191),
-                                TextInput::make('per')
+                                TextInput::make('per'),
+                                TextInput::make('min_night')->label('Minimum Night'),
+                                TextInput::make('promo_code'),
                             ]),
                             Grid::make(1)->schema([
-                                TextInput::make('min_night')->label('Minimum Night'),
                                 Toggle::make('is_active')
                                     ->label('Publish')
                                     ->inline(false)
                                     ->onColor('success')
-                                    ->offColor('secondary')
+                                    ->offColor('secondary'),
                             ]),
                         ])
                         ->collapsible()

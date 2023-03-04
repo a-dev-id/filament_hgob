@@ -93,7 +93,7 @@
     				</div> -->
                     <div class="mt-1">
                         <h3 class="fw-bold">Press & Media Partnership</h3>
-                        <a href="mailto:fenty@hanginggardensinternational.com" class="fs-5 text-decoration-none link-dark">fenty@hanginggardensinternational.com</a>
+                        <a href="mailto:media@hanginggardensinternational.com" class="fs-5 text-decoration-none link-dark">media@hanginggardensinternational.com</a>
                     </div>
                 </div>
             </div>

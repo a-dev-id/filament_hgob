@@ -26,6 +26,7 @@ class HomeController extends Controller
         $offer_list = Offer::where('is_active', '1')->latest()->get();
         $review_list = Review::where('is_active', '1')->get();
         $popup_list = PopUp::where('is_active', '1')->get();
+
         return view('hgob.home')->with(compact('setting', 'villa_list', 'experience_list', 'offer_list', 'review_list', 'popup_list'));
     }
 
@@ -42,7 +43,6 @@ class HomeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -75,7 +75,6 @@ class HomeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

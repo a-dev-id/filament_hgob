@@ -3,22 +3,21 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\InquiryResource\Pages;
-use App\Filament\Resources\InquiryResource\RelationManagers;
 use App\Models\Inquiry;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class InquiryResource extends Resource
 {
     protected static ?string $model = Inquiry::class;
 
     protected static ?int $navigationSort = 1;
+
     protected static ?string $navigationGroup = 'Booking';
+
     protected static ?string $navigationIcon = 'heroicon-o-bell';
 
     public static function form(Form $form): Form
@@ -69,7 +68,7 @@ class InquiryResource extends Resource
                     ->date(),
                 Tables\Columns\TextColumn::make('message'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->dateTime(),
             ])->defaultSort('created_at', 'desc')
             ->filters([
                 //
