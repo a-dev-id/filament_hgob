@@ -95,7 +95,7 @@
                                 <i class="fa fa-tag booking-field-icon"></i>
                             </div>
                             <div class="col px-1 position-relative h-100">
-                                <button type="submit" class="btn btn-primary text-uppercase rounded-0 fw-bold h-100 w-100">BOOK</button>
+                                <button type="submit" class="btn btn-gold text-uppercase rounded-0 fw-bold h-100 w-100">BOOK</button>
                             </div>
                         </form>
                     </div>
