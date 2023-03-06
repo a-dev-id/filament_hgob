@@ -65,23 +65,21 @@
                 <div class="booking-form-wrapper">
                     <div class="booking-form-wrapper-inner">
                         <form class="d-flex h-100" action="https://book-directonline.com/properties/hanginggardensofbalidirect" method="get" target="_blank">
-                            <input type="hidden" name="propertyId" class="datepicker-input" value="MzQ1MQ">
-                            <input type="hidden" name="viewtype" class="datepicker-input" value="roomview">
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Arrival</label>
-                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="fromDate" value="14-02-2023" readonly="true">
+                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="fromDate" value="{{date('d-m-Y')}}" readonly="true">
                                 <i class="fa fa-calendar booking-field-icon"></i>
-                                <input type="hidden" name="checkInDate" class="datepicker-input" value="2023-02-14">
+                                <input type="hidden" name="checkInDate" class="datepicker-input" value="{{date('d-m-Y')}}">
                             </div>
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Departure</label>
-                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="toDate" value="15-02-2023" readonly="true">
+                                <input type="text" class="form-control booking-field-input h-100 w-100 datepicker" id="toDate" value="{{date('d-m-Y',strtotime('+2 days'))}}" readonly="true">
                                 <i class="fa fa-calendar booking-field-icon"></i>
-                                <input type="hidden" name="checkOutDate" class="datepicker-input" value="2023-02-15">
+                                <input type="hidden" name="checkOutDate" class="datepicker-input" value="{{date('d-m-Y',strtotime('+2 days'))}}">
                             </div>
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Guests</label>
-                                <select class="form-control booking-field-input h-100 w-100">
+                                <select class="form-control booking-field-input h-100 w-100" name="items[0][adults]">
                                     <option value="1">01</option>
                                     <option value="2">02</option>
                                     <option value="3">03</option>
@@ -93,11 +91,11 @@
                             </div>
                             <div class="col px-1 position-relative h-100">
                                 <label class="booking-field-text">Promo code</label>
-                                <input type="text" class="form-control booking-field-input h-100 w-100" name="promo_code" placeholder="...">
+                                <input type="text" class="form-control booking-field-input h-100 w-100" name="promocode" placeholder="...">
                                 <i class="fa fa-tag booking-field-icon"></i>
                             </div>
                             <div class="col px-1 position-relative h-100">
-                                <button type="submit" class="btn btn-gold text-uppercase rounded-0 fw-bold h-100 w-100">BOOK</button>
+                                <button type="submit" class="btn btn-primary text-uppercase rounded-0 fw-bold h-100 w-100">BOOK</button>
                             </div>
                         </form>
                     </div>
