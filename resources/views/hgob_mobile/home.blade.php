@@ -31,7 +31,7 @@
 
             </div>
             <div class="button-wrapper button-wrapper-home">
-                <a href="https://goo.gl/maps/zBod1yFj1YRMUBfm9" class="btn btn-outline-light border-2" target="_blank"><i class="fa fa-map-marker me-1"></i> Get Directions</a>
+                <a href="https://goo.gl/maps/823LNfwvff4x1asb9" class="btn btn-outline-light border-2" target="_blank"><i class="fa fa-map-marker me-1"></i> Get Directions</a>
             </div>
             <div class="gradient-top"></div>
         </div>
