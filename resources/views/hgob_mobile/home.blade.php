@@ -127,7 +127,7 @@
                         <div class="row g-1">
                             <div class="col-12 h-150px">
                                 <div class="tiles">
-                                    <img src="{{asset('storage/'.$blog->banner_image)}}" alt="{{config('app.name')}} - {{$honeymoon->page_name}}">
+                                    <img src="{{asset('storage/'.$honeymoon->banner_image)}}" alt="{{config('app.name')}} - {{$honeymoon->page_name}}">
                                     <a href="{{route('mhoneymoon')}}">{{$honeymoon->page_name}}</a>
                                 </div>
                             </div>

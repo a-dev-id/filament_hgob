@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-12">
                     <img src="{{asset('images/hanginggarden-logo.png')}}" alt="{{config('app.name')}} - Logo" class="img-logo my-3" style="width:70%">
-                    <iframe src="https://maps.google.com/maps?q=Nandini+Bali+Jungle+Resort+and+Spa&amp;t=h&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" class="my-3"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4938.747972421658!2d115.23645031478245!3d-8.412754193949846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd23d467fa63d5f%3A0x1be2fc17d127a6b9!2sHanging%20Gardens%20Of%20Bali!5e1!3m2!1sen!2sid!4v1678069097842!5m2!1sen!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     <ul class="list-unstyled">
                         <li class="my-1"><i class="fa fa-map-marker me-1"></i> Desa Buahan, Payangan, Bali 80571, Indonesia</li>
 
